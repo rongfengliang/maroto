@@ -14,6 +14,10 @@ const (
 	// Helvetica represents a helvetica Font
 	Helvetica Family = "helvetica"
 	// Symbol represents a symbol Font
+
+	// NotoSansSC represents a notosanssc Font
+	NotoSansSC Family = "notosanssc"
+
 	Symbol Family = "symbol"
 	// ZapBats represents a zapfdingbats Font
 	ZapBats Family = "zapfdingbats"
