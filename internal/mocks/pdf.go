@@ -2,7 +2,7 @@
 
 package mocks
 
-import gofpdf "github.com/jung-kurt/gofpdf"
+import gofpdf "github.com/jung-kurt/gofpdf/v2"
 import io "io"
 import mock "github.com/stretchr/testify/mock"
 import time "time"

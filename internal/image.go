@@ -7,7 +7,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/rongfengliang/maroto/pkg/consts"
 	"github.com/rongfengliang/maroto/pkg/props"
-	"github.com/jung-kurt/gofpdf"
+	"github.com/jung-kurt/gofpdf/v2"
 )
 
 // Image is the abstraction which deals of how to add images in a PDF

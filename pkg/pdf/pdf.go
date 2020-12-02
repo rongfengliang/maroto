@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"github.com/rongfengliang/maroto/pkg/color"
 
-	"github.com/jung-kurt/gofpdf"
+	"github.com/jung-kurt/gofpdf/v2"
 	"github.com/rongfengliang/maroto/internal"
 	"github.com/rongfengliang/maroto/pkg/consts"
 	"github.com/rongfengliang/maroto/pkg/props"

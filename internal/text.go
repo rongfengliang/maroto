@@ -3,7 +3,7 @@ package internal
 import (
 	"github.com/rongfengliang/maroto/pkg/consts"
 	"github.com/rongfengliang/maroto/pkg/props"
-	"github.com/jung-kurt/gofpdf"
+	"github.com/jung-kurt/gofpdf/v2"
 	"strings"
 )
 
