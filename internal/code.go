@@ -4,8 +4,7 @@ import (
 	"github.com/boombuler/barcode/code128"
 	"github.com/boombuler/barcode/qr"
 	"github.com/rongfengliang/maroto/pkg/props"
-	"github.com/jung-kurt/gofpdf"
-	"github.com/jung-kurt/gofpdf/contrib/barcode"
+	"github.com/jung-kurt/gofpdf/v2"
 )
 
 // Code is the abstraction which deals of how to add QrCodes or Barcode in a PDF
@@ -29,7 +28,7 @@ func NewCode(pdf gofpdf.Pdf, math Math) *code {
 
 // AddQr create a QrCode inside a cell
 func (s *code) AddQr(code string, cell Cell, prop props.Rect) {
-	key := barcode.RegisterQR(s.pdf, code, qr.H, qr.Unicode)
+	key := RegisterQR(s.pdf, code, qr.H, qr.Unicode)
 
 	var x, y, w, h float64
 	if prop.Center {
@@ -38,7 +37,7 @@ func (s *code) AddQr(code string, cell Cell, prop props.Rect) {
 		x, y, w, h = s.math.GetRectNonCenterColProperties(cell.Width, cell.Width, cell.Width, cell.Height, cell.X, prop)
 	}
 
-	barcode.Barcode(s.pdf, key, x, y+cell.Y, w, h, false)
+	Barcode(s.pdf, key, x, y+cell.Y, w, h, false)
 }
 
 // AddBar create a Barcode inside a cell
@@ -58,6 +57,6 @@ func (s *code) AddBar(code string, cell Cell, prop props.Barcode) (err error) {
 		x, y, w, h = s.math.GetRectNonCenterColProperties(cell.Width, cell.Width*heightPercentFromWidth, cell.Width, cell.Height, cell.X, rectProps)
 	}
 
-	barcode.Barcode(s.pdf, barcode.Register(bcode), x, y+cell.Y, w, h, false)
+	Barcode(s.pdf, Register(bcode), x, y+cell.Y, w, h, false)
 	return
 }
